@@ -1,0 +1,22 @@
+name: 'Greeting function'
+description: 'To study input and output'
+
+inputs:
+  person-name: 
+    description: 'Fetching value from workflow' 
+    required: true
+
+outputs:
+  greeting:
+    description: 
+    value: ${{ steps.generate.outputs.step-key }}
+  
+runs:
+  using: 'composite'
+  steps:
+    - name: Generating greetings
+      id: generate
+      shell: bash
+      run: |
+        message="Hello ${{ inputs.person-name }}"
+        echo "step-key=$message" >> $GITHUB_OUTPUT
