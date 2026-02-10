@@ -6,11 +6,11 @@ jobs:
   demo:
     runs-on: ubuntu-latest
     steps: 
-      - name: get code
-        uses: actions/checkout@v4
+    #   - name: get code
+    #     uses: actions/checkout@v4
       - name: Using action
         id: action-step
-        uses: ./.github/workflows/customs-actions/input-output-composite-actions
+        uses: ./.github/customs-actions/input-output-composite-actions
         with:
           person-name: 'Amogh'
 
